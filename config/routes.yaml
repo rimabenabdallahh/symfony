@@ -1,5 +1,4 @@
 
-
 list:
     path: /list
     controller: App\Controller\AuthorController::list
