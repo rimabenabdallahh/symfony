@@ -58,7 +58,7 @@ class AuthorController extends AbstractController
         ],
     ];
     public function authorDetails ($id)
-    {  
+    {   $id--;
         $author = $this->authors[$id];
       
         return $this->render('author/showAuthor.html.twig', [
