@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AuthorController!{% endblock %}
+
+{% block body %}
+
+
+    <h1>  Auteur</h1>
+    <ul>
+        <li>
+            Nom: {{ author.username }}<br>
+            Email: {{ author.email }}<br>
+            Nombre de livres: {{ author.nb_books }}<br>
+            Image: <img src="{{ asset(author.picture) }}" alt="{{ author.username }}"><br>
+        </li>
+    </ul>
+
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AuthorController!{% endblock %}
+
+{% block body %}
+
+
+<h1>Liste des auteurs</h1>
+ 
+ {% set nombretotal = 0 %}
+{% if authors|length != 0 %}
+
+
+{% set nombreauteur =  authors|length %}
+{% for author in authors %}
+{% set nombretotal = nombretotal+author.nb_books %}
+
+<table class="table ">
+<tr>
+<td> {{ author.id }}</td>
+<td>{{author.username | upper}} </td>
+ 
+</tr>
+<a href="{{path('authorDetails',{'id':author.id})}}"> Details</a>
+  {%endfor%}
+
+  </table>
+  {% else %}
+<p>Table vide </p>
+{% endif %}
+Le nombre des auteurs={{nombreauteur}}</br>
+Le nombre total des livres={{nombretotal}}
+
+
+{% endblock %}
